@@ -11,22 +11,21 @@
                     <div class="post-title">
                       <a href="single.html"
                         ><h1>
-                          <?php echo $post ['title'] ?>
+                          <?php echo $post ['title']; ?>
                         </h1></a
                       >
                     </div>
                     <div class="post-info">
-                      <span><?php echo $post ['created_at'] ?></span> | <span>Life style</span>
+                      <span><?php echo $post ['created_at']; ?></span> | <span>Life style</span>
                     </div>
                     <p>
-                    <?php echo \Core\Helpers\truncate($post ['text']) ?>...
+                    <?php echo \Core\Helpers\truncate($post ['text']); ?>...
                     </p>
                     <a
-                      href="?postId=<?php echo $post['id']; ?>"
+                      href="posts/<?php echo $post["id"];?>/<?php echo Core\Helpers\slugify($post['title']); ?>"
                       class="
                         button button-style button-anim
-                        fa fa-long-arrow-right
-                      "
+                        fa fa-long-arrow-right"
                       ><span>Read More</span></a
                     >
                     <?php endforeach; ?>

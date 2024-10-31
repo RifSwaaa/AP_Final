@@ -7,3 +7,7 @@ require_once '../core/connexion.php';
 // 3. Charger les Helpers
 
 require_once '../core/helpers.php';
+
+// 4. Charger les contstantes
+
+require_once '../core/constantes.php';
