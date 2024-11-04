@@ -36,3 +36,15 @@ function showAction (PDO $connexion, int $id)
     $content = ob_get_clean();
 }
 
+function formAction ()
+{
+
+    // Je charge la vu 'home' dans $content
+
+    global $content, $title;
+    $title = "Add a post";
+    ob_start();
+    include '../app/views/posts/form.php';
+    $content = ob_get_clean();
+}
+

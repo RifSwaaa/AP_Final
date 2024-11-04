@@ -6,9 +6,8 @@
 // CTRL : pagesController
 // ACTION : homeAction
     if (isset($_GET['posts'])):
-        include_once '../app/controllers/postsController.php';
-        \App\Controllers\PostsController\showAction($connexion, $_GET["id"]);
+        include_once '../app/routers/postsRouter.php';
     else:
         include_once '../app/controllers/postsController.php';
-        \App\Controllers\PostsController\homeAction($connexion);
+        \App\Controllers\PostsController\homeAction($connexion); 
     endif;
