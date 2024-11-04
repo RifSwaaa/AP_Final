@@ -27,7 +27,6 @@ function showAction (PDO $connexion, int $id)
     $post = PostsModel\findOneById($connexion, $id);
 
     
-    // Je charge la vu 'home' dans $content
 
     global $content, $title;
     $title = "Alex Parker - Blog";
@@ -39,12 +38,21 @@ function showAction (PDO $connexion, int $id)
 function formAction ()
 {
 
-    // Je charge la vu 'home' dans $content
 
     global $content, $title;
     $title = "Add a post";
     ob_start();
-    include '../app/views/posts/form.php';
+    include '../app/views/posts/addForm.php';
     $content = ob_get_clean();
 }
+
+function addPostFormAction(PDO $connexion, array $data)
+{
+    include_once '../app/models/postsModel.php';
+    $post = PostsModel\addOneById($connexion, $data);
+    header('Location: ' . BASE_URL);
+
+}
+
+
 

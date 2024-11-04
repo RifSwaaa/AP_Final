@@ -8,6 +8,10 @@ switch ($_GET['posts']):
     case 'form':
         \App\Controllers\PostsController\formAction();
         break;
+    case 'addForm':
+        \App\Controllers\PostsController\addPostFormAction($connexion, $_POST);
+        break;
+        
 endswitch;
         
 

@@ -20,4 +20,21 @@ function findOneById(PDO $connexion, int $id) :array {
     $rs-> execute();
     return $rs->fetch(PDO::FETCH_ASSOC);
 }
+
+function addOneById(PDO $connexion, array $data): int {
+    $sql = "INSERT INTO posts
+            SET title = :title,
+                text = :text,
+                quote = :quote,
+                image = :image,
+                created_at = NOW();";
+
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':title', $data['title'], PDO::PARAM_STR);
+    $rs->bindValue(':text', $data['text'], PDO::PARAM_STR);
+    $rs->bindValue(':quote', $data['quote'], PDO::PARAM_STR);
+    $rs->bindValue(':image', $data['image'], PDO::PARAM_STR);
+    $rs->execute();
+    return $connexion->lastInsertId();
+}
 ?>
