@@ -14,7 +14,13 @@ switch ($_GET['posts']):
     case 'deleteForm':
         \App\Controllers\PostsController\deleteFormAction($connexion, $_GET['id']);
         break;
-        
+    case 'editForm':
+            \App\Controllers\PostsController\editFormAction($connexion, $_GET['id']);
+        break;
+
+    case 'updateForm':
+            \App\Controllers\PostsController\updateFormAction($connexion, $_GET['id']);
+        break;
 endswitch;
         
 
