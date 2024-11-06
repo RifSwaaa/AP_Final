@@ -11,6 +11,9 @@ switch ($_GET['posts']):
     case 'addForm':
         \App\Controllers\PostsController\addPostFormAction($connexion, $_POST);
         break;
+    case 'deleteForm':
+        \App\Controllers\PostsController\deleteFormAction($connexion, $_GET['id']);
+        break;
         
 endswitch;
         

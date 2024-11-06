@@ -54,5 +54,13 @@ function addPostFormAction(PDO $connexion, array $data)
 
 }
 
+function deleteFormAction(PDO $connexion, int $id)
+{
+    include_once "../app/models/postsModel.php";
+    $response = \App\Models\PostsModel\deleteOneById($connexion, $id);
+    header('Location: ' . BASE_URL);
+}
+
+
 
 

@@ -9,7 +9,7 @@ RewriteEngine on
 #PATTERN: /posts/id/slug-du-post.html
 #URL: ?posts=show&id=$1
 
-RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9\-]+$ index.php?posts=show&id=$1 [L]
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9\-]+)$ index.php?posts=show&id=$1 [L]
 
 #ROUTE D'AJOUT D'UN POST: affichage du formulaire
 #PATTERN: /posts/add/form.html
@@ -20,9 +20,15 @@ RewriteRule ^posts/add/form.html$ index.php?posts=form [L]
 
 # ROUTE D'AJOUT D'UN POST: INSERT
 # PATTERN: /posts/add/insert.html
-#URL: ?posts=addForm
+# URL: ?posts=addForm
 
 RewriteRule ^posts/add/insert.html$ index.php?posts=addForm [L]
+
+# ROUTE DE SUPPRESSION D'UN POST:
+# PATTERN: /posts/id/slug-du-post/delete.html
+# URL: ?posts=deleteForm
+
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9\-]+)/delete.html$ index.php?posts=deleteForm&id=$1 [L]
 
 #---------------------------------------------------
 
